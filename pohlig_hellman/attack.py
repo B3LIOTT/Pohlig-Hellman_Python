@@ -66,7 +66,13 @@ def pohlig_hellman(a, b, p):
         if lhs == rhs: x[i] = k; break
 
       if i + 1 < r:
-        beta[i + 1] = (beta[i] * inverse_of(pow(a, x[i] * q ** i, p), p)) % p
+        try:
+          inv = inverse_of(pow(a, x[i] * q ** i, p), p)
+        except NotInversibleException:
+          print(f"[!] {pow(a, x[i] * q ** i, p)} has no inverse mod {p}")
+          sys.exit(1)
+
+        beta[i + 1] = (beta[i] * inv) % p
 
     congruent_to_x = reduce(lambda ac, p, q=q: ac + p[0] * q ** p[1], zip(x, range(r)), 0)
     congruences.append(congruent_to_x)
@@ -104,3 +110,8 @@ if __name__ == '__main__':
   res = pohlig_hellman(a, b, p)
   print("\nAttack done:")
   print(f"x = {res}")
+  print('_'*20)
+  print(f"Checking the result: ")
+  print('Expected: ', b)
+  print("Got: ", pow(a, res, p))
+  
