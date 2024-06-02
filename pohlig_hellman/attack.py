@@ -111,7 +111,6 @@ if __name__ == '__main__':
   print("\nAttack done:")
   print(f"x = {res}")
   print('_'*20)
-  print(f"Checking the result: ")
+  print(f"\nChecking the result: ")
   print('Expected: ', b)
-  print("Got: ", pow(a, res, p))
-  
+  print("\nGot: ", pow(a, res, p))
