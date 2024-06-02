@@ -1,5 +1,3 @@
-from math import gcd, sqrt
-
 
 
 class NotInversibleException(Exception):

@@ -1,6 +1,7 @@
 from math import gcd
 from functools import reduce
 
+
 def pollard_p_minus_1(n, B=10000):
     a = 2
     for j in range(2, B):
