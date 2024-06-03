@@ -6,7 +6,7 @@ I wrote this code to solve a Root-Me challenge (Discrete Log).
 
 ## Usage
 ### Argv
-To use this code, you can provide a, b, p from $b = a^x$ mod $p$ in the program arguments:
+To use this code, you can provide a, b, p from $b = a^x ~{}mod ~{}p$ in the program arguments:
 ```
 python attack.py <b> <a> <p>
 ```
