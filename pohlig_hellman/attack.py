@@ -8,12 +8,24 @@ import sys
 
 
 def read_params_from_file(filename: str):
+  a, b, p = 0, 0, 0
   try:
     with open(filename, 'r') as f:
       lines = f.readlines()
-      a = int(lines[0].split("=")[1])
-      b = int(lines[1].split("=")[1])
-      p = int(lines[2].split("=")[1])
+      for line in lines:
+        if line.startswith("a"):
+          a = int(line.split("=")[1])
+        elif line.startswith("b"):
+          b = int(line.split("=")[1])
+        elif line.startswith("p"):
+          p = int(line.split("=")[1])
+        else:
+          print(f"Invalid line: {line}")
+          sys.exit(1)
+        
+      if a == 0 or b == 0 or p == 0:
+        print("Invalid file format")
+        sys.exit(1)
 
       return a, b, p
   except FileNotFoundError:
