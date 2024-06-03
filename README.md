@@ -1,6 +1,6 @@
 # Pohlig-Hellman in Python
 ## Description
-A python program which uses the Pohlig-Hellman method to recover the private key x in b = a^x mod p (Discrete Log problem). 
+A python program which uses the Pohlig-Hellman method to recover the private key $x$ in $b = a^x ~{}mod ~{}p$ (Discrete Log problem). 
 I wrote this code to solve a Root-Me challenge (Discrete Log).
 
 
