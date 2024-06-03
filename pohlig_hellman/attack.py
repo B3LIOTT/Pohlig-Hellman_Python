@@ -19,9 +19,6 @@ def read_params_from_file(filename: str):
           b = int(line.split("=")[1])
         elif line.startswith("p"):
           p = int(line.split("=")[1])
-        else:
-          print(f"Invalid line: {line}")
-          sys.exit(1)
         
       if a == 0 or b == 0 or p == 0:
         print("Invalid file format")
