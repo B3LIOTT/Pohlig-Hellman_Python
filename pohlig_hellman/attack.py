@@ -6,6 +6,8 @@ from pollard import factorize_with_pollard
 from utils import *
 import sys
 
+__author__ = "b3liott"
+
 
 def read_params_from_file(filename: str):
   a, b, p = 0, 0, 0
